@@ -1,0 +1,50 @@
+#!/bin/bash
+#SBATCH -J sae_p0_grid
+#SBATCH -p scavenge
+#SBATCH --gres=gpu:1
+#SBATCH -c 4
+#SBATCH --mem=48G
+#SBATCH -t 00:59:00
+#SBATCH --array=0-764%24
+#SBATCH -o logs/sae_extension/six_model_phase0_grid_%A_%a.out
+#SBATCH -e logs/sae_extension/six_model_phase0_grid_%A_%a.err
+
+set -euo pipefail
+
+cd /rhf/allocations/wq8/yd68/ecg_fm_interpretability_benchmark
+mkdir -p logs/sae_extension results/sae_extension/six_model_sae_audit/phase0_recon_grid_tinyN
+
+PYTHON="/rhf/allocations/wq8/yd68/venvs/csfm_cu118/bin/python"
+N_GRID=(8 16 32 48 64)
+L0_GRID=(1 2 4)
+
+IDX="${SLURM_ARRAY_TASK_ID}"
+CELL_INDEX=$((IDX / 15))
+REM=$((IDX % 15))
+N_IDX=$((REM / 3))
+L0_IDX=$((REM % 3))
+N_VALUE="${N_GRID[$N_IDX]}"
+L0_VALUE="${L0_GRID[$L0_IDX]}"
+
+OUT_DIR="results/sae_extension/six_model_sae_audit/phase0_recon_grid_tinyN/cell_${CELL_INDEX}/N${N_VALUE}/L0${L0_VALUE}"
+mkdir -p "${OUT_DIR}"
+
+"${PYTHON}" -m benchmark_v1.sae_extension.run_sae_layer \
+  --environment benchmark \
+  --cells results/analysis/model_comparison/leace_coupling_top_confirmed.csv \
+  --coupling results/analysis/model_comparison/leace_coupling_risk_summary.csv \
+  --artifacts results/sae_artifacts \
+  --out "${OUT_DIR}" \
+  --cell-index "${CELL_INDEX}" \
+  --recon-curve-only \
+  --selection-mode recon_band \
+  --recon-target 0.90 \
+  --recon-band-width 0.02 \
+  --relaxed-band-width 0.04 \
+  --E-grid 1 \
+  --n-features-grid "${N_VALUE}" \
+  --l0-grid "${L0_VALUE}" \
+  --steps 4000 \
+  --checkpoint-every 250 \
+  --skip-existing \
+  --device cuda

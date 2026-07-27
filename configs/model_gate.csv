@@ -1,0 +1,8 @@
+model,checkpoint,architecture,activation_access,continuation,input_protocol,head_protocol,modality,lead_protocol,time_length,status,notes
+ECG-FM,yes,transformer,needs_review,needs_review,compatible_review_needed,yes,ECG,12-lead review,review,needs_review,Requires direct activation and continuation adapter audit.
+ECG-JEPA,yes,transformer,yes,yes,compatible_with_reduced_lead,yes,ECG,reduced 8-lead I II V1-V6,2500 samples,status_main_candidate,sehunfromdaegu ECG_JEPA multiblock checkpoint available locally.
+CSFM ECG branch,yes,transformer,yes,yes,compatible,yes,ECG or ECG+PPG,arbitrary-channel 12 ECG leads plus PPG,2500 samples at 250Hz,status_main_candidate,Continuation from every transformer block was verified against original forward output with zero max absolute difference in CSFM continuation smoke check.
+ST-MEM,needs_review,transformer,needs_review,needs_review,compatible_review_needed,yes,ECG,12-lead review,review,needs_review,Checkpoint and adapter path must be confirmed.
+ECGFounder,yes,non_transformer,no,no,compatible,yes,ECG,12-lead or 1-lead,5000 samples at 500Hz,extended,Official local implementation is Net1D ResNet/SE not Transformer.
+HuBERT-ECG,yes,transformer,yes,needs_review,compatible,yes,ECG,12-lead flattened sequence,12 x 2500 samples at 500Hz,extended_until_continuation_verified,HF hubert-ecg-base checkpoint downloaded locally; continuation erasure adapter still requires audit.
+CARDIAC-FM ECG branch,yes,transformer_via_ECG-FM,yes,needs_review,compatible,yes,ECG or ECG+MRI,12-lead ECG-only supported,5000 samples at 500Hz,extended_multimodal_candidate,Stage1 ECG-MRI contrastive checkpoint downloaded locally; ECG branch is ECG-FM initialized then multimodal-aligned.

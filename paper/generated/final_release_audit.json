@@ -1,0 +1,396 @@
+{
+  "status": "complete",
+  "audit_pass": true,
+  "requirements_checked": 52,
+  "errors": [],
+  "checksum_files": 52,
+  "comparison_rule": "same SAE architecture, d, absolute N, and k within every FM block; no per-model best-scale ranking",
+  "evidence": {
+    "primary_protocol": {
+      "path": "results/multiscale_sae_v1/protocol.json",
+      "status": "present",
+      "bytes": 1399,
+      "predicates": {
+        "benchmark_object": "ECG foundation-model representations",
+        "n_training_cells": 450,
+        "sparsity_arm": "fixed_k_over_d",
+        "exact_absolute_scale_matching": true
+      },
+      "mismatches": {}
+    },
+    "slurm_chain": {
+      "path": "results/multiscale_sae_v1/slurm_chain.json",
+      "status": "present",
+      "bytes": 5362
+    },
+    "primary_audit": {
+      "path": "results/multiscale_sae_v1/audit.json",
+      "status": "present",
+      "bytes": 719,
+      "predicates": {
+        "expected_cells": 450,
+        "complete_cells": 450,
+        "expected_matched_blocks": 75,
+        "complete_matched_blocks": 75,
+        "exact_absolute_scale_blocks": 75,
+        "record_manifest_alignment_pass": true,
+        "record_count": 21799,
+        "matched_scale_grid_pass": true,
+        "audit_pass": true
+      },
+      "mismatches": {}
+    },
+    "matched_scale_grid": {
+      "path": "results/multiscale_sae_v1/matched_scale_grid_audit.csv",
+      "status": "present",
+      "bytes": 14763,
+      "rows": 75,
+      "expected_rows": 75
+    },
+    "record_manifest_alignment": {
+      "path": "results/multiscale_sae_v1/record_manifest_audit.csv",
+      "status": "present",
+      "bytes": 1295,
+      "rows": 6,
+      "expected_rows": 6
+    },
+    "primary_cells": {
+      "path": "results/multiscale_sae_v1/cell_metrics.csv",
+      "status": "present",
+      "bytes": 89593,
+      "rows": 450,
+      "expected_rows": 450
+    },
+    "primary_surface": {
+      "path": "results/multiscale_sae_v1/layer_scale_surface.csv",
+      "status": "present",
+      "bytes": 53364,
+      "rows": 150,
+      "expected_rows": 150
+    },
+    "primary_profiles": {
+      "path": "results/multiscale_sae_v1/model_profiles.csv",
+      "status": "present",
+      "bytes": 1322,
+      "rows": 6,
+      "expected_rows": 6
+    },
+    "stability_audit": {
+      "path": "results/multiscale_sae_v1/stability_audit.json",
+      "status": "present",
+      "bytes": 162,
+      "predicates": {
+        "status": "complete",
+        "seed_pair_rows": 450,
+        "layer_scale_rows": 150,
+        "model_profiles": 6
+      },
+      "mismatches": {}
+    },
+    "stability_pairs": {
+      "path": "results/multiscale_sae_v1/stability_seed_pairs.csv",
+      "status": "present",
+      "bytes": 81940,
+      "rows": 450,
+      "expected_rows": 450
+    },
+    "stability_surface": {
+      "path": "results/multiscale_sae_v1/stability_layer_scale.csv",
+      "status": "present",
+      "bytes": 12120,
+      "rows": 150,
+      "expected_rows": 150
+    },
+    "stability_profiles": {
+      "path": "results/multiscale_sae_v1/stability_model_profiles.csv",
+      "status": "present",
+      "bytes": 380,
+      "rows": 6,
+      "expected_rows": 6
+    },
+    "design_inference_audit": {
+      "path": "results/multiscale_sae_v1/test_inference_audit.json",
+      "status": "present",
+      "bytes": 573,
+      "predicates": {
+        "status": "complete",
+        "profile_rows": 24,
+        "pair_rows": 60,
+        "rank_stability_rows": 40,
+        "matched_scale_blocks": 75,
+        "patient_level_inference": false
+      },
+      "mismatches": {}
+    },
+    "design_profiles": {
+      "path": "results/multiscale_sae_v1/test_model_profile_inference.csv",
+      "status": "present",
+      "bytes": 2450,
+      "rows": 24,
+      "expected_rows": 24
+    },
+    "design_pairs": {
+      "path": "results/multiscale_sae_v1/test_model_pair_inference.csv",
+      "status": "present",
+      "bytes": 9004,
+      "rows": 60,
+      "expected_rows": 60
+    },
+    "scale_rank_stability": {
+      "path": "results/multiscale_sae_v1/test_scale_rank_stability.csv",
+      "status": "present",
+      "bytes": 6806,
+      "rows": 40,
+      "expected_rows": 40
+    },
+    "patient_bootstrap_audit": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_audit.json",
+      "status": "present",
+      "bytes": 1847,
+      "predicates": {
+        "status": "complete",
+        "verified_tasks": 450,
+        "expected_tasks": 450,
+        "matched_scale_blocks": 75,
+        "bootstrap_samples": 2000,
+        "surface_rows": 450,
+        "matched_scale_rows": 90,
+        "model_profile_rows": 18,
+        "model_pair_rows": 45,
+        "rank_probability_rows": 108,
+        "concept_rows": 294,
+        "per_model_best_scale_ranking": false,
+        "patient_bootstrap_protocol": "patient_cluster_v2"
+      },
+      "mismatches": {}
+    },
+    "patient_surface": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_surface.csv",
+      "status": "present",
+      "bytes": 45856,
+      "rows": 450,
+      "expected_rows": 450
+    },
+    "patient_matched_scales": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_matched_scales.csv",
+      "status": "present",
+      "bytes": 8947,
+      "rows": 90,
+      "expected_rows": 90
+    },
+    "patient_model_profiles": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_model_profiles.csv",
+      "status": "present",
+      "bytes": 1892,
+      "rows": 18,
+      "expected_rows": 18
+    },
+    "patient_model_pairs": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_model_pairs.csv",
+      "status": "present",
+      "bytes": 6843,
+      "rows": 45,
+      "expected_rows": 45
+    },
+    "patient_rank_probabilities": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_rank_probabilities.csv",
+      "status": "present",
+      "bytes": 5988,
+      "rows": 108,
+      "expected_rows": 108
+    },
+    "patient_concepts": {
+      "path": "results/multiscale_sae_v1/test_patient_bootstrap_concepts.csv",
+      "status": "present",
+      "bytes": 27053,
+      "rows": 294,
+      "expected_rows": 294
+    },
+    "operating_point_audit": {
+      "path": "results/multiscale_sae_v1/operating_point_audit.json",
+      "status": "present",
+      "bytes": 1162,
+      "predicates": {
+        "status": "complete",
+        "selection_split": "validation",
+        "test_metrics_used_for_selection": false
+      },
+      "mismatches": {}
+    },
+    "selected_operating_points": {
+      "path": "results/multiscale_sae_v1/selected_operating_points.csv",
+      "status": "present",
+      "bytes": 1869,
+      "rows": 12,
+      "expected_rows": 12
+    },
+    "selected_checkpoint_manifest": {
+      "path": "results/multiscale_sae_v1/selected_checkpoint_manifest.csv",
+      "status": "present",
+      "bytes": 16511,
+      "rows": 36,
+      "expected_rows": 36
+    },
+    "sensitivity_training_audit": {
+      "path": "results/multiscale_sae_fixed_k_over_n_middepth_v1/audit.json",
+      "status": "present",
+      "bytes": 716,
+      "predicates": {
+        "expected_cells": 90,
+        "complete_cells": 90,
+        "expected_matched_blocks": 15,
+        "complete_matched_blocks": 15,
+        "exact_absolute_scale_blocks": 15,
+        "record_manifest_alignment_pass": true,
+        "record_count": 21799,
+        "matched_scale_grid_pass": true,
+        "audit_pass": true
+      },
+      "mismatches": {}
+    },
+    "sensitivity_analysis_audit": {
+      "path": "results/multiscale_sae_fixed_k_over_n_middepth_v1/test_sparsity_sensitivity_audit.json",
+      "status": "present",
+      "bytes": 797,
+      "predicates": {
+        "status": "complete",
+        "matched_cells_per_arm": 90,
+        "rank_agreement_rows": 20,
+        "cell_difference_rows": 120,
+        "auc_difference_rows": 24,
+        "patient_level_inference": false
+      },
+      "mismatches": {}
+    },
+    "sensitivity_rank_agreement": {
+      "path": "results/multiscale_sae_fixed_k_over_n_middepth_v1/test_sparsity_rank_agreement.csv",
+      "status": "present",
+      "bytes": 3419,
+      "rows": 20,
+      "expected_rows": 20
+    },
+    "sensitivity_auc_profiles": {
+      "path": "results/multiscale_sae_fixed_k_over_n_middepth_v1/test_sparsity_auc_profiles.csv",
+      "status": "present",
+      "bytes": 4522,
+      "rows": 48,
+      "expected_rows": 48
+    },
+    "sensitivity_auc_differences": {
+      "path": "results/multiscale_sae_fixed_k_over_n_middepth_v1/test_sparsity_auc_differences.csv",
+      "status": "present",
+      "bytes": 4096,
+      "rows": 24,
+      "expected_rows": 24
+    },
+    "figure_audit": {
+      "path": "results/multiscale_sae_v1/figure_audit.json",
+      "status": "present",
+      "bytes": 4208,
+      "predicates": {
+        "status": "complete"
+      },
+      "mismatches": {}
+    },
+    "figure_multiscale_benchmark_workflow_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_benchmark_workflow.png",
+      "status": "present",
+      "bytes": 245114
+    },
+    "figure_multiscale_benchmark_workflow_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_benchmark_workflow.pdf",
+      "status": "present",
+      "bytes": 36666
+    },
+    "figure_multiscale_dead_feature_atlas_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_dead_feature_atlas.png",
+      "status": "present",
+      "bytes": 111035
+    },
+    "figure_multiscale_dead_feature_atlas_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_dead_feature_atlas.pdf",
+      "status": "present",
+      "bytes": 23890
+    },
+    "figure_multiscale_model_curves_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_model_curves.png",
+      "status": "present",
+      "bytes": 333337
+    },
+    "figure_multiscale_model_curves_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_model_curves.pdf",
+      "status": "present",
+      "bytes": 28606
+    },
+    "figure_multiscale_patient_common_scale_auc_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_patient_common_scale_auc.png",
+      "status": "present",
+      "bytes": 74251
+    },
+    "figure_multiscale_patient_common_scale_auc_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_patient_common_scale_auc.pdf",
+      "status": "present",
+      "bytes": 20118
+    },
+    "figure_multiscale_patient_matched_scale_curves_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_patient_matched_scale_curves.png",
+      "status": "present",
+      "bytes": 404605
+    },
+    "figure_multiscale_patient_matched_scale_curves_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_patient_matched_scale_curves.pdf",
+      "status": "present",
+      "bytes": 32391
+    },
+    "figure_multiscale_reconstruction_atlas_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_reconstruction_atlas.png",
+      "status": "present",
+      "bytes": 119830
+    },
+    "figure_multiscale_reconstruction_atlas_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_reconstruction_atlas.pdf",
+      "status": "present",
+      "bytes": 26442
+    },
+    "figure_multiscale_semantic_atlas_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_semantic_atlas.png",
+      "status": "present",
+      "bytes": 122403
+    },
+    "figure_multiscale_semantic_atlas_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_semantic_atlas.pdf",
+      "status": "present",
+      "bytes": 23909
+    },
+    "figure_multiscale_sparsity_sensitivity_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_sparsity_sensitivity.png",
+      "status": "present",
+      "bytes": 162728
+    },
+    "figure_multiscale_sparsity_sensitivity_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_sparsity_sensitivity.pdf",
+      "status": "present",
+      "bytes": 24674
+    },
+    "figure_multiscale_stability_curves_png": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_stability_curves.png",
+      "status": "present",
+      "bytes": 248054
+    },
+    "figure_multiscale_stability_curves_pdf": {
+      "path": "results/multiscale_sae_v1/figures/multiscale_stability_curves.pdf",
+      "status": "present",
+      "bytes": 22960
+    },
+    "paper_table_multiscale": {
+      "path": "results/multiscale_sae_v1/paper_table_multiscale.tex",
+      "status": "present",
+      "bytes": 439
+    },
+    "paper_table_multiscale_patient": {
+      "path": "results/multiscale_sae_v1/paper_table_multiscale_patient.tex",
+      "status": "present",
+      "bytes": 599
+    }
+  }
+}

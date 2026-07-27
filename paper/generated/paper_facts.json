@@ -1,0 +1,265 @@
+{
+  "protocol": {
+    "models": 6,
+    "depths": 5,
+    "expansions": [
+      1,
+      4,
+      8,
+      16,
+      32
+    ],
+    "seeds": 3,
+    "cells": 450,
+    "matched_blocks": 75,
+    "patients": 2862,
+    "bootstrap_samples": 2000,
+    "concepts": 49
+  },
+  "metrics": {
+    "recon_R2": {
+      "order": [
+        "HuBERT-ECG",
+        "ECG-JEPA",
+        "CSFM",
+        "ECG-FM",
+        "CARDIAC-FM",
+        "ST-MEM"
+      ],
+      "top_model": "HuBERT-ECG",
+      "significant_pairwise_contrasts_bh_005": 15,
+      "median_cross_scale_kendall_tau": 1.0,
+      "minimum_cross_scale_kendall_tau": 1.0,
+      "models": {
+        "CARDIAC-FM": {
+          "observed": 0.9364728254850908,
+          "ci_low": 0.9357234922846158,
+          "ci_high": 0.9371499173045158,
+          "probability_rank_1": 0.0,
+          "mean_rank": 5.0
+        },
+        "CSFM": {
+          "observed": 0.964342009707536,
+          "ci_low": 0.9633999027311804,
+          "ci_high": 0.965166455556949,
+          "probability_rank_1": 0.0,
+          "mean_rank": 3.0
+        },
+        "ECG-FM": {
+          "observed": 0.9396176794747568,
+          "ci_low": 0.9389089262286822,
+          "ci_high": 0.9402710461517176,
+          "probability_rank_1": 0.0,
+          "mean_rank": 4.0
+        },
+        "ECG-JEPA": {
+          "observed": 0.9720790103024052,
+          "ci_low": 0.9716301871736844,
+          "ci_high": 0.9724800003866356,
+          "probability_rank_1": 0.0,
+          "mean_rank": 2.0
+        },
+        "HuBERT-ECG": {
+          "observed": 0.985111074948565,
+          "ci_low": 0.9848101332386334,
+          "ci_high": 0.985411155283451,
+          "probability_rank_1": 1.0,
+          "mean_rank": 1.0
+        },
+        "ST-MEM": {
+          "observed": 0.9161656450756708,
+          "ci_low": 0.9152425740361212,
+          "ci_high": 0.9170105998714764,
+          "probability_rank_1": 0.0,
+          "mean_rank": 6.0
+        }
+      }
+    },
+    "semantic_alignment": {
+      "order": [
+        "ECG-JEPA",
+        "ECG-FM",
+        "CARDIAC-FM",
+        "ST-MEM",
+        "HuBERT-ECG",
+        "CSFM"
+      ],
+      "top_model": "ECG-JEPA",
+      "significant_pairwise_contrasts_bh_005": 13,
+      "median_cross_scale_kendall_tau": 0.7333333333333333,
+      "minimum_cross_scale_kendall_tau": 0.7333333333333333,
+      "models": {
+        "CARDIAC-FM": {
+          "observed": 0.3307306497879505,
+          "ci_low": 0.3218544477075338,
+          "ci_high": 0.3392130524565776,
+          "probability_rank_1": 0.0,
+          "mean_rank": 2.613
+        },
+        "CSFM": {
+          "observed": 0.2660938176751842,
+          "ci_low": 0.2547949056774378,
+          "ci_high": 0.2770693012103438,
+          "probability_rank_1": 0.0,
+          "mean_rank": 5.9285
+        },
+        "ECG-FM": {
+          "observed": 0.3311787481101981,
+          "ci_low": 0.3218738480359316,
+          "ci_high": 0.3395507994865377,
+          "probability_rank_1": 0.0,
+          "mean_rank": 2.387
+        },
+        "ECG-JEPA": {
+          "observed": 0.3510765732036376,
+          "ci_low": 0.3428397705604632,
+          "ci_high": 0.3593912013868491,
+          "probability_rank_1": 1.0,
+          "mean_rank": 1.0
+        },
+        "HuBERT-ECG": {
+          "observed": 0.2720552687379024,
+          "ci_low": 0.2581730190937717,
+          "ci_high": 0.2846892361690601,
+          "probability_rank_1": 0.0,
+          "mean_rank": 5.0715
+        },
+        "ST-MEM": {
+          "observed": 0.3142213743653784,
+          "ci_low": 0.3040665712952614,
+          "ci_high": 0.3245419494112333,
+          "probability_rank_1": 0.0,
+          "mean_rank": 4.0
+        }
+      }
+    },
+    "concept_coverage_020": {
+      "order": [
+        "CARDIAC-FM",
+        "ECG-FM",
+        "ECG-JEPA",
+        "ST-MEM",
+        "HuBERT-ECG",
+        "CSFM"
+      ],
+      "top_model": "CARDIAC-FM",
+      "significant_pairwise_contrasts_bh_005": 13,
+      "median_cross_scale_kendall_tau": 0.7333333333333333,
+      "minimum_cross_scale_kendall_tau": 0.6,
+      "models": {
+        "CARDIAC-FM": {
+          "observed": 0.8062585034013605,
+          "ci_low": 0.7721054427921772,
+          "ci_high": 0.8210884404281774,
+          "probability_rank_1": 0.9905,
+          "mean_rank": 1.0095
+        },
+        "CSFM": {
+          "observed": 0.6591836734693877,
+          "ci_low": 0.6131972791204849,
+          "ci_high": 0.6821836795012155,
+          "probability_rank_1": 0.0,
+          "mean_rank": 5.7045
+        },
+        "ECG-FM": {
+          "observed": 0.7876190476190476,
+          "ci_low": 0.7534659844239553,
+          "ci_high": 0.8058503460884094,
+          "probability_rank_1": 0.0,
+          "mean_rank": 2.2155
+        },
+        "ECG-JEPA": {
+          "observed": 0.7717006802721087,
+          "ci_low": 0.7612210863133272,
+          "ci_high": 0.7936054452359677,
+          "probability_rank_1": 0.0095,
+          "mean_rank": 2.775
+        },
+        "HuBERT-ECG": {
+          "observed": 0.6625850340136052,
+          "ci_low": 0.6195884329378605,
+          "ci_high": 0.7019081686437131,
+          "probability_rank_1": 0.0,
+          "mean_rank": 5.2955
+        },
+        "ST-MEM": {
+          "observed": 0.7261224489795918,
+          "ci_low": 0.6902040848881007,
+          "ci_high": 0.7499319728265206,
+          "probability_rank_1": 0.0,
+          "mean_rank": 4.0
+        }
+      }
+    }
+  },
+  "stability": {
+    "matched_cosine_above_random_order": [
+      "ECG-FM",
+      "CARDIAC-FM",
+      "ECG-JEPA",
+      "ST-MEM",
+      "HuBERT-ECG",
+      "CSFM"
+    ],
+    "subspace_overlap_order": [
+      "CSFM",
+      "HuBERT-ECG",
+      "ST-MEM",
+      "ECG-JEPA",
+      "CARDIAC-FM",
+      "ECG-FM"
+    ],
+    "models": {
+      "CARDIAC-FM": {
+        "stability_auc": 0.3603246237963943,
+        "subspace_auc": 0.6834508244196573
+      },
+      "CSFM": {
+        "stability_auc": 0.2993880038275014,
+        "subspace_auc": 0.7569878033796947
+      },
+      "ECG-FM": {
+        "stability_auc": 0.3707563472423595,
+        "subspace_auc": 0.6749683010578155
+      },
+      "ECG-JEPA": {
+        "stability_auc": 0.3391080470138889,
+        "subspace_auc": 0.7157439927260082
+      },
+      "HuBERT-ECG": {
+        "stability_auc": 0.3018592179159245,
+        "subspace_auc": 0.7295602039496103
+      },
+      "ST-MEM": {
+        "stability_auc": 0.3277309467976196,
+        "subspace_auc": 0.7179209534327189
+      }
+    }
+  },
+  "sparsity_sensitivity": {
+    "concept_coverage": {
+      "median_rank_kendall_tau": 0.8666666666666666,
+      "minimum_rank_kendall_tau": 0.4666666666666666
+    },
+    "dead_fraction": {
+      "median_rank_kendall_tau": 1.0,
+      "minimum_rank_kendall_tau": 0.2
+    },
+    "reconstruction": {
+      "median_rank_kendall_tau": 1.0,
+      "minimum_rank_kendall_tau": 0.8666666666666666
+    },
+    "semantic_alignment": {
+      "median_rank_kendall_tau": 0.7333333333333333,
+      "minimum_rank_kendall_tau": 0.6
+    },
+    "e8_anchor_max_abs_difference": 0.02721088435374149
+  },
+  "stage_two_selection": {
+    "points": 12,
+    "checkpoints": 36,
+    "selection_split": "validation",
+    "test_metrics_used_for_selection": false
+  },
+  "claim_rule": "metric-specific comparisons over identical E values; no composite or per-model best-scale ranking"
+}

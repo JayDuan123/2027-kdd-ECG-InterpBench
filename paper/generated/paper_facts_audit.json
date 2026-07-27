@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "release_audit_pass": true,
+  "model_metrics": 3,
+  "models": 6,
+  "composite_interpretability_score": false,
+  "per_model_best_scale_ranking": false,
+  "outputs": [
+    "paper_facts.json",
+    "paper_macros.tex",
+    "paper_facts.md"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "source_audit": {
+    "comparison_rule": "matched records, SAE architecture, d, absolute N, and k; no per-model best-scale ranking",
+    "record_manifest_alignment_pass": true,
+    "record_manifest_hash": "5bb9325780edd4b892005eba6080e4614d15b46cca66df03fe18718582961acc",
+    "record_count": 21799,
+    "expected_cells": 450,
+    "manifest_cells": 450,
+    "complete_cells": 450,
+    "incomplete_cells": 0,
+    "coverage_fraction": 1.0,
+    "expected_matched_blocks": 75,
+    "complete_matched_blocks": 75,
+    "exact_absolute_scale_blocks": 75,
+    "matched_scale_grid_pass": true,
+    "matched_scale_grid_issues": [],
+    "models_complete": [
+      "CARDIAC-FM",
+      "CSFM",
+      "ECG-FM",
+      "ECG-JEPA",
+      "HuBERT-ECG",
+      "ST-MEM"
+    ],
+    "audit_pass": true
+  },
+  "output_dir": "results/multiscale_sae_v1/figures",
+  "figures": [
+    "multiscale_benchmark_workflow.png",
+    "multiscale_dead_feature_atlas.png",
+    "multiscale_model_curves.png",
+    "multiscale_patient_common_scale_auc.png",
+    "multiscale_patient_matched_scale_curves.png",
+    "multiscale_reconstruction_atlas.png",
+    "multiscale_semantic_atlas.png",
+    "multiscale_sparsity_sensitivity.png",
+    "multiscale_stability_curves.png"
+  ],
+  "latex_table": "results/multiscale_sae_v1/paper_table_multiscale.tex",
+  "patient_bootstrap_audit": {
+    "bootstrap_design_hash": "263db5f04de1c34cb85c7557ba3adb5ed951d62961eb304eb9bd8bfd21d1d8a0",
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 20260714,
+    "claim_boundary": "patient sampling uncertainty conditional on frozen FM/SAE weights and train-selected features; the three fixed SAE seeds are averaged, not resampled",
+    "comparison_rule": "FMs are compared at identical relative expansion E; common-scale AUC integrates the same five E values for every FM.",
+    "concept_profile_consistency": {
+      "CARDIAC-FM": {
+        "distribution_max_error": 3.548304872147412e-09,
+        "observed_error": 5.551115123125783e-17
+      },
+      "CSFM": {
+        "distribution_max_error": 4.163755396024982e-09,
+        "observed_error": 0.0
+      },
+      "ECG-FM": {
+        "distribution_max_error": 3.859175923270897e-09,
+        "observed_error": 5.551115123125783e-17
+      },
+      "ECG-JEPA": {
+        "distribution_max_error": 3.5022758582137214e-09,
+        "observed_error": 5.551115123125783e-17
+      },
+      "HuBERT-ECG": {
+        "distribution_max_error": 3.493366873552617e-09,
+        "observed_error": 0.0
+      },
+      "ST-MEM": {
+        "distribution_max_error": 3.898880773789415e-09,
+        "observed_error": 5.551115123125783e-17
+      }
+    },
+    "concept_rows": 294,
+    "expected_tasks": 450,
+    "matched_scale_blocks": 75,
+    "matched_scale_rows": 90,
+    "model_pair_rows": 45,
+    "model_profile_rows": 18,
+    "n_patients": 2862,
+    "patient_bootstrap_protocol": "patient_cluster_v2",
+    "patient_cluster_hash": "d8d41546a9488ec43b9c844b8fc3b54aa8a532d5b30861e365a46c9e02ef9614",
+    "patient_id_hash": "0ffd9fb1b77e30b206997e6fac916765931270f63715a2a3567aed178ff45439",
+    "per_model_best_scale_ranking": false,
+    "rank_probability_rows": 108,
+    "resampling_unit": "PTB-XL patient",
+    "split": "test",
+    "status": "complete",
+    "surface_rows": 450,
+    "verified_tasks": 450
+  },
+  "sparsity_sensitivity_audit": {
+    "auc_difference_rows": 24,
+    "cell_difference_rows": 120,
+    "claim_boundary": "mid-depth sparsity-parameterization sensitivity with paired fixed SAE seeds",
+    "comparison_rule": "both arms compare all six FMs at the same E and relative depth; no per-model scale selection",
+    "e8_anchor_max_abs_difference": 0.02721088435374149,
+    "expansions": [
+      1,
+      4,
+      8,
+      16,
+      32
+    ],
+    "matched_cells_per_arm": 90,
+    "models": [
+      "CARDIAC-FM",
+      "CSFM",
+      "ECG-FM",
+      "ECG-JEPA",
+      "HuBERT-ECG",
+      "ST-MEM"
+    ],
+    "patient_level_inference": false,
+    "primary_arm": "fixed_k_over_d=1/8",
+    "rank_agreement_rows": 20,
+    "relative_depth": 0.5,
+    "seeds": [
+      4311,
+      4312,
+      4313
+    ],
+    "sensitivity_arm": "fixed_k_over_N=1/64",
+    "split": "test",
+    "status": "complete"
+  }
+}

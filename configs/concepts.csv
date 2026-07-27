@@ -1,0 +1,51 @@
+concept_id,family,display_name,aggregation,source_file,source_columns,main,notes
+hr_ventricular,RATE_RHYTHM,Ventricular heart rate,global,12sl_features.csv,HR_Ventr_Global,yes,Measurement concept not diagnostic rhythm label.
+hr_atrial,RATE_RHYTHM,Atrial heart rate,global,12sl_features.csv,HR_Atrial_Global,yes,Measurement concept.
+rr_mean,RATE_RHYTHM,RR mean,global,12sl_features.csv,RR_Mean_Global,yes,Measurement concept.
+rr_iqr,RATE_RHYTHM,RR variability IQR,global,ecgdeli_features.csv,RR_Mean_Global_iqr,yes,Robust variability proxy.
+p_found,RATE_RHYTHM,P wave presence,global,12sl_features.csv,P_Found_Global,yes,Morphology measurement not AF label.
+pr_interval,INTERVAL,PR interval,global,12sl_features.csv,PR_Int_Global,yes,Global interval.
+pq_interval,INTERVAL,PQ interval,global,ecgdeli_features.csv,PQ_Int_Global,yes,Global interval.
+p_duration_global,INTERVAL,P duration,global,12sl_features.csv,P_Dur_Global,yes,Global duration.
+qrs_duration,INTERVAL,QRS duration,global,12sl_features.csv,QRS_Dur_Global,yes,Global duration.
+qt_interval,INTERVAL,QT interval,global,12sl_features.csv,QT_Int_Global,yes,Global interval.
+qtc_bazett,INTERVAL,QTc Bazett,global,12sl_features.csv,QT_IntBazett_Global,yes,Corrected interval.
+qtc_fridericia,INTERVAL,QTc Fridericia,global,12sl_features.csv,QT_IntFridericia_Global,yes,Corrected interval.
+qtc_framingham,INTERVAL,QTc Framingham,global,12sl_features.csv,QT_IntFramingham_Global,yes,Corrected interval.
+p_axis_front,AXIS,P frontal axis,global,12sl_features.csv,P_AxisFront_Global,yes,Axis measurement.
+qrs_axis_front,AXIS,QRS frontal axis,global,12sl_features.csv,R_AxisFrontal_Global,yes,Axis measurement.
+t_axis_front,AXIS,T frontal axis,global,12sl_features.csv,T_AxisFront_Global,yes,Axis measurement.
+qrst_angle,AXIS,QRS-T angle,derived,12sl_features.csv,R_AxisFrontal_Global|T_AxisFront_Global,yes,Derived absolute angular difference.
+p_amp_global,AMPLITUDE,P amplitude global,lead_absmax,12sl_features.csv,P_Amp_{lead},yes,Aggregate over all 12 leads.
+p_amp_limb,AMPLITUDE,P amplitude limb,lead_absmax,12sl_features.csv,P_Amp_I|P_Amp_II|P_Amp_III|P_Amp_aVR|P_Amp_aVL|P_Amp_aVF,yes,Limb lead aggregate.
+p_amp_precordial,AMPLITUDE,P amplitude precordial,lead_absmax,12sl_features.csv,P_Amp_V1|P_Amp_V2|P_Amp_V3|P_Amp_V4|P_Amp_V5|P_Amp_V6,yes,Precordial aggregate.
+q_amp_global,AMPLITUDE,Q amplitude global,lead_absmax,12sl_features.csv,Q_Amp_{lead},yes,Aggregate over all 12 leads.
+q_amp_limb,AMPLITUDE,Q amplitude limb,lead_absmax,12sl_features.csv,Q_Amp_I|Q_Amp_II|Q_Amp_III|Q_Amp_aVR|Q_Amp_aVL|Q_Amp_aVF,yes,Limb aggregate.
+q_amp_precordial,AMPLITUDE,Q amplitude precordial,lead_absmax,12sl_features.csv,Q_Amp_V1|Q_Amp_V2|Q_Amp_V3|Q_Amp_V4|Q_Amp_V5|Q_Amp_V6,yes,Precordial aggregate.
+r_amp_global,AMPLITUDE,R amplitude global,lead_absmax,12sl_features.csv,R_Amp_{lead},yes,Aggregate over all 12 leads.
+r_amp_limb,AMPLITUDE,R amplitude limb,lead_absmax,12sl_features.csv,R_Amp_I|R_Amp_II|R_Amp_III|R_Amp_aVR|R_Amp_aVL|R_Amp_aVF,yes,Limb aggregate.
+r_amp_precordial,AMPLITUDE,R amplitude precordial,lead_absmax,12sl_features.csv,R_Amp_V1|R_Amp_V2|R_Amp_V3|R_Amp_V4|R_Amp_V5|R_Amp_V6,yes,Precordial aggregate.
+s_amp_global,AMPLITUDE,S amplitude global,lead_absmax,12sl_features.csv,S_Amp_{lead},yes,Aggregate over all 12 leads.
+s_amp_limb,AMPLITUDE,S amplitude limb,lead_absmax,12sl_features.csv,S_Amp_I|S_Amp_II|S_Amp_III|S_Amp_aVR|S_Amp_aVL|S_Amp_aVF,yes,Limb aggregate.
+s_amp_precordial,AMPLITUDE,S amplitude precordial,lead_absmax,12sl_features.csv,S_Amp_V1|S_Amp_V2|S_Amp_V3|S_Amp_V4|S_Amp_V5|S_Amp_V6,yes,Precordial aggregate.
+t_amp_global,ST_T,T amplitude global,lead_absmax,12sl_features.csv,T_Amp_{lead},yes,Aggregate over all 12 leads.
+t_amp_limb,ST_T,T amplitude limb,lead_absmax,12sl_features.csv,T_Amp_I|T_Amp_II|T_Amp_III|T_Amp_aVR|T_Amp_aVL|T_Amp_aVF,yes,Limb aggregate.
+t_amp_precordial,ST_T,T amplitude precordial,lead_absmax,12sl_features.csv,T_Amp_V1|T_Amp_V2|T_Amp_V3|T_Amp_V4|T_Amp_V5|T_Amp_V6,yes,Precordial aggregate.
+t_area_global,ST_T,T area global,lead_absmax,12sl_features.csv,T_AreaFull_{lead},yes,Aggregate over all 12 leads.
+t_area_limb,ST_T,T area limb,lead_absmax,12sl_features.csv,T_AreaFull_I|T_AreaFull_II|T_AreaFull_III|T_AreaFull_aVR|T_AreaFull_aVL|T_AreaFull_aVF,yes,Limb aggregate.
+t_area_precordial,ST_T,T area precordial,lead_absmax,12sl_features.csv,T_AreaFull_V1|T_AreaFull_V2|T_AreaFull_V3|T_AreaFull_V4|T_AreaFull_V5|T_AreaFull_V6,yes,Precordial aggregate.
+st_elev_global,ST_T,ST elevation global,lead_absmax,ecgdeli_features.csv,ST_Elev_{lead},yes,Aggregate over all 12 leads.
+st_elev_inferior,ST_T,ST elevation inferior,lead_absmax,ecgdeli_features.csv,ST_Elev_II|ST_Elev_III|ST_Elev_aVF,yes,Inferior group aggregate.
+st_elev_lateral,ST_T,ST elevation lateral,lead_absmax,ecgdeli_features.csv,ST_Elev_I|ST_Elev_aVL|ST_Elev_V5|ST_Elev_V6,yes,Lateral group aggregate.
+st_elev_anterior,ST_T,ST elevation anterior,lead_absmax,ecgdeli_features.csv,ST_Elev_V1|ST_Elev_V2|ST_Elev_V3|ST_Elev_V4,yes,Anterior group aggregate.
+st_amp_global,ST_T,ST amplitude global,lead_absmax,12sl_features.csv,ST_Amp_{lead},yes,Aggregate over all 12 leads.
+st_amp_inferior,ST_T,ST amplitude inferior,lead_absmax,12sl_features.csv,ST_Amp_II|ST_Amp_III|ST_Amp_aVF,yes,Inferior group aggregate.
+st_amp_lateral,ST_T,ST amplitude lateral,lead_absmax,12sl_features.csv,ST_Amp_I|ST_Amp_aVL|ST_Amp_V5|ST_Amp_V6,yes,Lateral group aggregate.
+st_amp_anterior,ST_T,ST amplitude anterior,lead_absmax,12sl_features.csv,ST_Amp_V1|ST_Amp_V2|ST_Amp_V3|ST_Amp_V4,yes,Anterior group aggregate.
+qrs_balance_global,AMPLITUDE,QRS balance global,lead_absmax,12sl_features.csv,QRS_Balance_{lead},yes,Amplitude morphology aggregate.
+qrs_area_global,AMPLITUDE,QRS area global,lead_absmax,12sl_features.csv,QRS_Area_{lead},yes,Area morphology aggregate.
+p_area_global,AMPLITUDE,P area global,lead_absmax,12sl_features.csv,P_AreaFull_{lead},yes,Area morphology aggregate.
+p_area_limb,AMPLITUDE,P area limb,lead_absmax,12sl_features.csv,P_AreaFull_I|P_AreaFull_II|P_AreaFull_III|P_AreaFull_aVR|P_AreaFull_aVL|P_AreaFull_aVF,yes,Limb aggregate.
+p_area_precordial,AMPLITUDE,P area precordial,lead_absmax,12sl_features.csv,P_AreaFull_V1|P_AreaFull_V2|P_AreaFull_V3|P_AreaFull_V4|P_AreaFull_V5|P_AreaFull_V6,yes,Precordial aggregate.
+t_duration_global,ST_T,T duration global,global,ecgdeli_features.csv,T_Dur_Global,yes,Global duration.
+ha_global,AMPLITUDE,Heart axis auxiliary global,global,ecgdeli_features.csv,HA__Global,no,Extended candidate; not part of frozen main set unless preregistered.

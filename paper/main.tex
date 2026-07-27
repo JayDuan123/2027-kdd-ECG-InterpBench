@@ -1,0 +1,106 @@
+\documentclass[sigconf,review]{acmart}
+
+% KDD 2027 Datasets & Benchmarks Track uses single-blind review.
+% Confirm the final author list and submission metadata before upload.
+\setcopyright{none}
+\settopmatter{printacmref=true}
+\acmConference[KDD '27]{The 33rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining}{August 1--5, 2027}{San Jose, CA, USA}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{stfloats}
+\usepackage{placeins}
+\usepackage{xcolor}
+
+\newcommand{\bench}{ECG-InterpBench}
+\newif\ifresultsaudited
+\InputIfFileExists{generated/paper_macros.tex}{%
+  \resultsauditedtrue
+}{%
+  \resultsauditedfalse
+  \input{generated/paper_macros_fallback.tex}
+}
+
+% Placeholder graphics are never treated as release evidence.
+\ifresultsaudited\else
+  \renewcommand{\includegraphics}[2][]{\fbox{\parbox[c][2.8cm][c]{0.82\linewidth}{\centering Audited result figure pending}}}
+\fi
+
+\begin{document}
+
+\title[ECG-InterpBench]{ECG-InterpBench: Benchmarking the Interpretability of ECG Foundation Models with Matched-Scale Sparse Autoencoders}
+
+\author{Yixuan Duan}
+\affiliation{%
+  \department{Department of Electrical and Computer Engineering}
+  \institution{Rice University}
+  \city{Houston}
+  \state{Texas}
+  \country{USA}}
+\email{yd68@rice.edu}
+
+\author{Wei Qiu}
+\affiliation{%
+  \department{Department of Electrical and Computer Engineering}
+  \institution{Rice University}
+  \city{Houston}
+  \state{Texas}
+  \country{USA}}
+\email{wq8@rice.edu}
+
+\renewcommand{\shortauthors}{Duan and Qiu}
+
+\begin{abstract}
+Existing benchmarks for electrocardiogram foundation models primarily evaluate downstream predictive performance, providing limited insight into whether their internal representations can be faithfully decomposed, clinically interpreted, or reproduced across independent analyses. We introduce \bench, a benchmark designed to systematically evaluate the interpretability of ECG foundation-model representations. \bench{} uses sparse autoencoders as standardized measurement instruments and matches their capacity across models to enable controlled comparisons. We evaluate six frozen ECG foundation models across five standardized encoder depths, five matched dictionary widths, and three random seeds, producing a \MSCells{}-cell interpretability atlas comprising \MSMatchedBlocks{} exactly matched six-model comparison blocks.  The benchmark evaluates complementary dimensions of representation interpretability, including sparse reconstruction fidelity, single-feature accessibility and coverage of 49 clinically meaningful ECG measurements, and cross-seed feature reproducibility. The evaluation further quantifies patient-sampling uncertainty, depth- and seed-dependent variation, and sensitivity to the sparsity parameterization. The benchmark reveals that ECG foundation models exhibit distinct interpretability profiles. A matched replication on MIMIC-IV-ECG confirms that reconstruction fidelity and clinical accessibility identify different leading models. The benchmark is accompanied by executable evaluation code, standardized manifests, cell-level metrics, and reproducibility audits. \bench{} complements performance-centered ECG benchmarks by providing a capacity-controlled and reproducible framework for comparing ECG foundation models across distinct dimensions of representation interpretability.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010147.10010257.10010258.10010261</concept_id>
+  <concept_desc>Computing methodologies~Representation of mathematical objects</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010147.10010371.10010372</concept_id>
+  <concept_desc>Computing methodologies~Unsupervised learning</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010405.10010444.10010446</concept_id>
+  <concept_desc>Applied computing~Health informatics</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10002951.10003260.10003282</concept_id>
+  <concept_desc>Information systems~Data analytics</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Representation of mathematical objects}
+\ccsdesc[300]{Computing methodologies~Unsupervised learning}
+\ccsdesc[300]{Applied computing~Health informatics}
+\ccsdesc[100]{Information systems~Data analytics}
+
+\keywords{benchmarking, sparse autoencoders, mechanistic interpretability, electrocardiogram, foundation models, representation analysis}
+
+\maketitle
+
+\input{sections/introduction_multiscale}
+\input{sections/related_work_multiscale}
+\input{sections/benchmark_design_multiscale}
+\input{sections/results_multiscale}
+\input{sections/discussion_multiscale}
+\input{sections/reproducibility_multiscale}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\input{sections/appendix_multiscale}
+
+\end{document}

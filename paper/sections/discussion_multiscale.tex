@@ -1,0 +1,15 @@
+\section{Limitations and Claim Boundary}
+
+\textbf{First,} the current benchmark covers six representative ECG foundation models spanning a diverse set of encoder architectures and pretraining objectives. Although this collection enables controlled comparisons across these models, future versions could incorporate newly released ECG foundation models and additional model scales to further broaden the benchmark.
+
+\textbf{Second,} the clinical concept inventory emphasizes waveform measurements and diagnostic concepts that can be evaluated consistently across models and cohorts. Extending the inventory to finer-grained morphological patterns, continuous physiological attributes, longitudinal changes, and expert-annotated concepts could provide a more comprehensive view of representation interpretability.
+
+\textbf{Third,} ECG-InterpBench uses a standardized SAE capacity and sparsity grid to ensure matched comparisons across encoders. Future work could evaluate finer-grained capacity ranges, alternative sparsity objectives, and additional dictionary-learning methods while preserving the same capacity-controlled evaluation protocol. These extensions would also facilitate adaptation of the benchmark to foundation models for EEG, medical imaging, electronic health records, and other clinical modalities.
+
+Throughout, ECG-InterpBench characterizes the structure of frozen model representations under a matched SAE protocol; it does not establish physiological mechanisms, clinical utility, or prospective patient outcomes. The reported model orderings are therefore specific to the evaluated representation properties and should not be interpreted as rankings of diagnostic performance or overall clinical value.
+
+\FloatBarrier
+
+\section{Conclusion}
+
+\bench{} uses a calibrated multi-scale SAE family to audit and compare ECG foundation-model representations. Its core unit is an exact six-model matched block. The resulting depth--scale profiles, paired patient inference, seed stability, sparsity sensitivity, and dense-to-single calibration distinguish faithful sparse reconstruction, distributed concept availability, single-coordinate accessibility, and reproducible feature identity. This design turns ECG-FM interpretability into a systematic and reproducible model-comparison problem. More broadly, \bench{} provides a general framework for identifying where, at what capacity, and how consistently clinically meaningful structure emerges within foundation-model representations. By connecting representation geometry with clinical concepts across models and scales, it establishes a foundation for the principled development and selection of interpretable ECG foundation models. The same capacity-controlled auditing framework can be extended to other clinical foundation models, including those for medical imaging, electroencephalography, electronic health records, physiological time series, and multimodal patient data. With modality-specific clinical concepts and matched representation interfaces, this framework can support systematic interpretability comparisons across a broader range of medical AI systems.

@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+
+# Data, model weights, and intermediate representations
+data/
+datasets/
+checkpoints/
+weights/
+activations/
+embeddings/
+results/
+logs/
+outputs/
+slurm-*.out
+slurm-*.err
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.h5
+*.hdf5
+*.parquet
+*.pkl
+*.pickle
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+paper/main.pdf
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*~

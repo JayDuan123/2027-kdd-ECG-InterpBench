@@ -1,0 +1,7 @@
+\section{Ethics, Reproducibility, and Artifact Readiness}
+
+All cohorts are de-identified secondary datasets used under their source access terms. No new participants were recruited, no clinical decision was made, and no output should be used for patient care. MIMIC-IV-ECG remains credentialed and cannot be redistributed; released artifacts exclude restricted waveforms and record-level MIMIC identifiers.
+
+Every primary cell stores model, layer, scale, and seed identity; a final checkpoint; split metrics; a train-selected concept table; and a firing-rate vector. Requirement-level audits verify exact model support, absolute $N/k$ matching, artifact shapes, finite metrics, patient-draw identity, row counts, and generated figures. Slurm job IDs and dependencies are recorded separately from scientific completion; a scheduled or successful worker is not considered evidence until the corresponding aggregate audit passes.
+
+Upon acceptance, we will release executable evaluation code, environment specifications, license-compatible split and concept manifests, aggregate and cell-level metrics, bootstrap seeds, audit JSON, and figure-generation scripts. Model weights and source datasets remain governed by their original repositories and licenses. PTB-XL supports a license-compatible public reproduction path; MIMIC remains an optional credentialed extension.

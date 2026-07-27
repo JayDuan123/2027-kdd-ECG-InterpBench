@@ -1,0 +1,10 @@
+task_id,task_family,diagnostic_label,source,label_type,main,notes
+ptbxl_norm,superclass,NORM,ptbxl_statements,multilabel,yes,Normal ECG superclass task.
+ptbxl_mi,superclass,MI,ptbxl_statements,multilabel,yes,Myocardial infarction superclass task.
+ptbxl_sttc,superclass,STTC,ptbxl_statements,multilabel,yes,ST/T change superclass task.
+ptbxl_cd,superclass,CD,ptbxl_statements,multilabel,yes,Conduction disturbance superclass task.
+ptbxl_hyp,superclass,HYP,ptbxl_statements,multilabel,yes,Hypertrophy superclass task.
+mi_ischemia,diagnosis_group,MI_or_ischemia,ptbxl_statements,multilabel,yes,Derived diagnosis group; concept registry must exclude diagnostic statements.
+bbb_conduction,diagnosis_group,BBB_or_conduction_disease,ptbxl_statements,multilabel,yes,Derived BBB/conduction task.
+hypertrophy,diagnosis_group,hypertrophy,ptbxl_statements,multilabel,yes,Derived hypertrophy task.
+af_rhythm,diagnosis_group,AF,ptbxl_statements,multilabel,conditional,Only include if label quality supports AF.
