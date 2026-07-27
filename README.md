@@ -133,6 +133,17 @@ result, credential, and build-product formats. Before publishing new artifacts,
 check both tracked files and Git history. Aggregate outputs must not contain
 restricted identifiers or credentials.
 
+## License
+
+The ECG-InterpBench software is released under the MIT License. See
+[LICENSE](LICENSE) for details.
+
+This license applies to the benchmark implementation in `benchmark_v1/`,
+`scripts/`, `tests/`, and `configs/`. Third-party model repositories,
+checkpoints, and datasets remain governed by their original licenses and access
+requirements. The manuscript and published figures remain subject to their
+applicable publication terms.
+
 ## Citation
 
 Citation metadata will be added when the paper record is finalized.
